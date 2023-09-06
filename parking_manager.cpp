@@ -8,4 +8,5 @@ class society
     string Name,Car_Name;
     int Car_Number,Flat_Number;
     bool Occupied;
+m;ll;;.m,';k['l'[l';';'l';
 };
