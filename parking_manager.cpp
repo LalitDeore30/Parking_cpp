@@ -2,11 +2,25 @@
 #include<cstring>
 using namespace std;
 
-class society
+class Society
 {
-    private:
-    string Name,Car_Name;
-    int Car_Number,Flat_Number;
-    bool Occupied;
-m;ll;;.m,';k['l'[l';';'l';
+private:
+  string sName;
+  bool bParking_Allocated;
+  int iWing_Number;
+
+protected:
+  int iFlat_Number;
+  long Phone_Number,Alternate_Number;
+
+ public:
+void Society_Input();
 };
+
+
+
+int main()
+{
+    
+    
+}
