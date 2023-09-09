@@ -115,7 +115,7 @@ int main()
 
     while (true)
     {
-        cout << "******** WELCOME TO MSNGSLSM SOCIETY ********" << endl;
+        cout << "******** WELCOME TO MANGALAM SOCIETY ********" << endl;
         cout << "Parking Menu" << endl;
         cout << "1. Park a vehicle" << endl;
         cout << "2. Exit parking" << endl;
