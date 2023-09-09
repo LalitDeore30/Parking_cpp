@@ -14,21 +14,70 @@ public:
 };
 class Society
 {
-private:
+public:
     string sName;
-    bool bParking_Allocated;
-    int iWing_Number;
+    int iParking_Allocated;
+  //  int iWing_Number;
 
-protected:
     int iFlat_Number;
-    long Phone_Number, Alternate_Number;
+ //   long Phone_Number, Alternate_Number;
+};
+
+class Data : public Society
+{
+    Society Record[5];
+
+    public :
+    Data()
+    {
+        Record[0].sName = "Omkar" ;
+        Record[0].iParking_Allocated = 1;
+        Record[0].iFlat_Number = 1;
+
+        Record[1].sName = "Lalit" ;
+        Record[1].iParking_Allocated = 1;
+        Record[1].iFlat_Number = 2;
+
+        Record[2].sName = "Omkar2" ;
+        Record[2].iParking_Allocated = 0;
+        Record[2].iFlat_Number = 3;
+
+        Record[3].sName = "Lalit2" ;
+        Record[3].iParking_Allocated = 0;
+        Record[3].iFlat_Number = 4;
+
+        Record[4].sName = "Omkar3" ;
+        Record[4].iParking_Allocated = 1;
+        Record[4].iFlat_Number = 5;
+    }
+    int Check_Parking_Allocation(int F_no)
+    {
+        int i;
+        for(i=0; i<5; i++)
+        {
+            if(F_no==Record[i].iFlat_Number)
+            {
+                break;
+            }
+        }
+        if(Record[i].iParking_Allocated==1)
+        {
+            cout<<"Parking is allocated"<<endl;
+            return 1;
+        }
+        else
+        {
+            cout<<"Parking is not allocated"<<endl;
+            return 0;
+        }
+    }
 };
 class Parking : public Society
 {
 public:
     Node *head = nullptr;
     Node *tail = nullptr;
-    int parkingSize = 6;
+    const int parkingSize = 5;
 
     Parking() : head(nullptr), tail(nullptr) {}
 
@@ -112,10 +161,11 @@ int main()
 {
     Parking parking;
     int choice;
+    Data c;
 
     while (true)
     {
-        cout << "******** WELCOME TO MANGALAM SOCIETY ********" << endl;
+        cout << "******** WELCOME TO MSNGSLSM SOCIETY ********" << endl;
         cout << "Parking Menu" << endl;
         cout << "1. Park a vehicle" << endl;
         cout << "2. Exit parking" << endl;
@@ -129,7 +179,16 @@ int main()
         case 1:
         {
             string type, name;
-            int number;
+            int number,F_no;
+            cout << "Enter Flat Number :";
+            cin >> F_no;
+            int check = c.Check_Parking_Allocation(F_no);
+
+            if(check == 0)
+            {
+                break;
+            }
+
             cout << "Enter Vehicle Type: ";
             cin >> type;
             cout << "Enter Vehicle Name: ";
