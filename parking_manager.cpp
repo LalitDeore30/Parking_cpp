@@ -28,7 +28,7 @@ class Parking : public Society
 public:
     Node *head = nullptr;
     Node *tail = nullptr;
-    const int parkingSize = 6;
+    int parkingSize = 6;
 
     Parking() : head(nullptr), tail(nullptr) {}
 
