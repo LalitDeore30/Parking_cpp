@@ -130,6 +130,23 @@ public:
         cout << "Vehicle with Number Plate " << vehicleNumber << " not found in the parking." << endl;
     }
 
+    int search_parking(int vehicleNumber)
+    {
+        int idx = 0;
+        Node *temp = head;
+        while (temp != nullptr)
+        {
+            if (temp->vehicle_number == vehicleNumber)
+            {
+                return idx + 1;
+            }
+            idx++;
+            temp = temp->next;
+        }
+        cout << "Vehicle with Number Plate " << vehicleNumber << " not found in the parking." << endl;
+        return -1;
+    }
+
     int size()
     {
         int count = 0;
@@ -171,6 +188,7 @@ int main()
         cout << "2. Exit parking" << endl;
         cout << "3. Display parking list" << endl;
         cout << "4. Check how many vehicles are parked in the parking are" << endl;
+        cout << "5. Check the position/parking number where you park your vehicle" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
 
@@ -212,6 +230,12 @@ int main()
             break;
         case 4:
             cout << "Number of vehicles parked: " << parking.size() << endl;
+            break;
+        case 5:
+            int number;
+            cout << "Enter Vehicle Number (Number Plate) to exit from parking: ";
+            cin >> number;
+            cout << "Parking number : " << parking.search_parking(number) << endl;
             break;
         default:
             cout << "Invalid choice. Please try again." << endl;
