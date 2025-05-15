@@ -1,5 +1,3 @@
-<img width="591" alt="Screenshot 2025-05-15 at 2 24 38 PM" src="https://github.com/user-attachments/assets/44b1f8ee-f13a-4b1e-a856-5ac744be04f3" /># Smart Parking Management System 🚗🏍️
-
 A **console-based Parking Management System** developed using **C++ and Object-Oriented Programming (OOP)** principles. The system enables effective parking lot management, vehicle tracking, parking slot availability, and basic fee handling.
 
 ---
